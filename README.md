@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# docker-kubernetes-learning
-=======
 # Docker & Kubernetes – Hands-on Learning Repository
 
 ## What is this?
@@ -8,21 +5,26 @@ This repository is a **step-by-step, hands-on learning guide** for:
 - Docker
 - Kubernetes
 
-Each topic is structured like a book:
-- Books → Docker / Kubernetes
-- Chapters → One concept at a time
-- Every chapter is runnable with a simple command
+It is designed to be:
+- Fully runnable on a local machine
+- Beginner-friendly but engineering-grade
+- Self-explanatory through code and comments
 
-## Philosophy
-- Learn by running real code
-- Minimal theory, maximum clarity
-- One command setups
-- Fully local (no cloud account required)
+Each topic is structured like a **book**, not just a collection of examples.
 
-## How to start
+---
 
-```bash
-git clone <this-repo>
-cd docker-kubernetes-learning
-./bootstrap.sh
->>>>>>> 570fb57 (Initial checkin with verification script and docker installation)
+## How this repository is structured
+
+Think of this repository as a **learning library**:
+
+- **Books**
+  - Docker
+  - Kubernetes
+- **Chapters**
+  - One concept per chapter
+  - Each chapter is isolated and runnable
+- **Code-first learning**
+  - Files explain themselves line by line
+  - READMEs provide navigation, not duplication
+
