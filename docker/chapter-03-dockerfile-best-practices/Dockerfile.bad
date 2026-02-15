@@ -1,0 +1,29 @@
+# ❌ BAD Dockerfile
+# This Dockerfile works, but violates multiple best practices.
+# We keep it intentionally wrong for learning purposes.
+
+# Uses the full Python image (larger size, larger attack surface)
+FROM python:3.11
+
+# Set working directory inside the container
+WORKDIR /app
+
+# ❌ Copies EVERYTHING from the build context into the image
+# This includes:
+# - source code
+# - data files
+# - scripts
+# - potentially unwanted files
+#
+# Any change in ANY file will invalidate Docker cache.
+COPY . .
+
+# ❌ Installs dependencies AFTER copying application code
+# This means:
+# - Any code change forces re-installation of dependencies
+# - Slower builds
+# - Poor CI/CD performance
+RUN pip install -r app/requirements.txt
+
+# Default command
+CMD ["python", "app/main.py"]

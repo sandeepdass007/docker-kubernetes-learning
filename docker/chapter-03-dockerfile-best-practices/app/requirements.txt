@@ -1,0 +1,8 @@
+# pandas is required for:
+# - Reading CSV files
+# - DataFrame operations
+# - Summary statistics (describe)
+#
+# In real data engineering workloads, pandas is commonly used
+# for lightweight batch processing and prototyping.
+pandas

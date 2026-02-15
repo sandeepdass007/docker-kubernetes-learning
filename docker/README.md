@@ -51,6 +51,36 @@ Location:
 
 ------------------------------------------------------------------------
 
+### Chapter 3 --- Dockerfile Design: Bad vs Good
+
+**Focus:** Understanding *working* vs *well-designed* Dockerfiles
+
+This chapter intentionally contains **two Dockerfiles**:
+
+- `Dockerfile.bad`
+- `Dockerfile.good`
+
+Both Dockerfiles **work correctly**.
+The difference is **how Docker behaves when files change**.
+
+You will learn:
+- Why a Dockerfile can work but still be poorly designed
+- How Docker layer caching affects dependency installation
+- Why modifying application code may or may not retrigger installs
+- How data file changes interact with Docker cache
+- How to structure Dockerfiles for predictable rebuilds
+
+Key learning:
+- Docker cache is **deterministic**, not smart
+- Instruction order directly controls rebuild behavior
+- “Cached” does **not** mean “wrong” — it means “unchanged inputs”
+
+Location:
+
+    docker/chapter-03-dockerfile-best-practices
+
+------------------------------------------------------------------------
+
 ## Design principles followed in this book
 
 -   **Code-first learning:** files explain themselves line by line
