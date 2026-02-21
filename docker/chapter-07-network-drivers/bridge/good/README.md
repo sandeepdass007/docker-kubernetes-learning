@@ -1,26 +1,71 @@
-# Bridge Network — GOOD Example
+# Chapter 07 — Network Drivers (Bridge) — GOOD Scenario
 
-This scenario demonstrates **correct container-to-container communication**
-using Docker’s default bridge network.
+## What this scenario demonstrates
 
-## What exists
-- A SERVER container
-- A CLIENT container
-- Both attached to the default bridge network
+This scenario fixes the failure by:
+- Creating a user-defined bridge network
+- Attaching both containers to the same network
+- Using Docker DNS correctly
 
-## What changed from BAD
-The client connects using:
+---
 
-    bridge-good-server
+## What is correct here
 
-instead of:
+- Bridge network explicitly created
+- SERVER and CLIENT on same network
+- CLIENT resolves SERVER by container name
+- Communication succeeds
 
-    localhost
+---
 
-## Why this works
-- Docker provides built-in DNS for bridge networks
-- Container names resolve to container IPs
-- No manual IP management required
+## Why user-defined bridge networks matter
 
-## Key lesson
-> Containers communicate via names, not localhost.
+Docker provides:
+- Automatic DNS resolution
+- Network isolation
+- Predictable discovery
+
+Only if you opt in.
+
+---
+
+## Files explained
+
+### Dockerfile
+Same image for both roles.
+
+### app.py
+- SERVER listens on a port
+- CLIENT connects using container name
+- DNS works due to shared network
+
+### run.sh
+- Creates network
+- Starts SERVER
+- Starts CLIENT
+- Shows success
+
+### clean.sh
+Stops containers and removes network.
+
+---
+
+## How to run
+
+```bash
+./run.sh
+```
+
+---
+
+## Expected output
+
+```text
+CLIENT received response from server
+```
+
+---
+
+## Key takeaway
+
+Containers communicate by network design, not coincidence.
