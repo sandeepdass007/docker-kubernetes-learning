@@ -33,45 +33,18 @@ This repo reflects the **current, working state of the project** — not future 
 ```text
 docker-kubernetes-learning/
 │
-├── README.md                  # Repository overview & progress
-├── bootstrap.sh               # One-time local setup helper
-├── verify.sh                  # Sanity checks for environment
+├── README.md
+├── bootstrap.sh
+├── verify.sh
 │
 ├── docker/
-│   ├── README.md              # Docker handbook overview
+│   ├── README.md
 │   │
 │   ├── chapter-01-hello-world/
-│   │   ├── Dockerfile
-│   │   ├── run.sh
-│   │   ├── clean.sh
-│   │   └── README.md
-│   │
 │   ├── chapter-02-image-layers/
-│   │   ├── Dockerfile
-│   │   ├── run.sh
-│   │   ├── clean.sh
-│   │   └── README.md
-│   │
 │   ├── chapter-03-dockerfile-best-practices/
-│   │   ├── Dockerfile.bad
-│   │   ├── Dockerfile.good
-│   │   ├── run_bad.sh
-│   │   ├── run_good.sh
-│   │   ├── cleanup.sh
-│   │   ├── app/
-│   │   │   ├── main.py
-│   │   │   ├── requirements.txt
-│   │   │   └── run.sh
-│   │   ├── data/
-│   │   │   └── sample_data.csv
-│   │   └── README.md
+│   ├── chapter-04-breaking-data/
 │   │
-│   └── chapter-04-breaking-data/
-│   |   ├── Dockerfile
-│   |   ├── app.py
-│   |   ├── run.sh
-│   |   ├── clean.sh
-│   |   └── README.md
 │   └── chapter-05-container-networking/
 │       ├── bad/
 │       │   ├── app.py
@@ -86,7 +59,7 @@ docker-kubernetes-learning/
 │       └── README.md
 │
 └── kubernetes/
-    └── README.md              # Kubernetes roadmap (coming next)
+    └── README.md
 ```
 
 ---
