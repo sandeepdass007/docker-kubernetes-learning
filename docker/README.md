@@ -1,157 +1,65 @@
-# Docker & Kubernetes – Hands-on Learning Repository
+# Docker – Hands-on Learning Guide
 
-## What is this repository?
+This folder contains a **chapter-by-chapter Docker learning path**, designed for hands-on exploration.
 
-This repository is a **hands-on, chapter-by-chapter learning guide** for:
-- Docker
-- Kubernetes
-
-It is designed like a **technical handbook**:
-- **Books** → Docker / Kubernetes
-- **Chapters** → One core concept at a time
-- **Every chapter is runnable**
-- **Every file is documented** (not README-driven only)
-
-This repo reflects the **current, working state of the project** — not future placeholders or incomplete demos.
+Each chapter focuses on one core concept, includes runnable code, and encourages experimentation.
 
 ---
 
-## Learning Philosophy
+## How to use this guide
 
-- Learn by **running real commands**
-- Minimal theory, **maximum clarity**
-- Focus on *what actually happens behind the scenes*
-- One core concept per chapter
-- Fully local — **no cloud account required**
-- Documentation lives **inside the files** (Dockerfiles, scripts, code), not just READMEs
-- Concepts are **intentionally broken and rebuilt** to reinforce learning
-
----
-
-## Repository Structure (Current)
-
-```text
-docker-kubernetes-learning/
-│
-├── README.md                  # Repository overview & progress
-├── bootstrap.sh               # One-time local setup helper
-├── verify.sh                  # Sanity checks for environment
-│
-├── docker/
-│   ├── README.md              # Docker handbook overview
-│   │
-│   ├── chapter-01-hello-world/
-│   │   ├── Dockerfile
-│   │   ├── run.sh
-│   │   ├── clean.sh
-│   │   └── README.md
-│   │
-│   ├── chapter-02-image-layers/
-│   │   ├── Dockerfile
-│   │   ├── run.sh
-│   │   ├── clean.sh
-│   │   └── README.md
-│   │
-│   ├── chapter-03-dockerfile-best-practices/
-│   │   ├── Dockerfile.bad
-│   │   ├── Dockerfile.good
-│   │   ├── run_bad.sh
-│   │   ├── run_good.sh
-│   │   ├── cleanup.sh
-│   │   ├── app/
-│   │   │   ├── main.py
-│   │   │   ├── requirements.txt
-│   │   │   └── run.sh
-│   │   ├── data/
-│   │   │   └── sample_data.csv
-│   │   └── README.md
-│   │
-│   └── chapter-04-breaking-data/
-│   |   ├── Dockerfile
-│   |   ├── app.py
-│   |   ├── run.sh
-│   |   ├── clean.sh
-│   |   └── README.md
-│   └── chapter-05-container-networking/
-│       ├── bad/
-│       │   ├── app.py
-│       │   ├── Dockerfile
-│       │   └── run.sh
-│       │
-│       ├── good/
-│       │   ├── app.py
-│       │   ├── Dockerfile
-│       │   └── run.sh
-│       │
-│       └── README.md
-│
-└── kubernetes/
-    └── README.md              # Kubernetes roadmap (coming next)
-```
-
----
-
-## Progress Tracker
-
-### Docker
-
-| Chapter | Topic | Status |
-|------|------|------|
-| Chapter 01 | Docker Basics (image, container, run) | ✅ Completed |
-| Chapter 02 | Image Layers & Caching | ✅ Completed |
-| Chapter 03 | Dockerfile Best Practices | ✅ Completed |
-| Chapter 04 | Breaking Data & Volumes (Persistence) | ✅ Completed |
-| Chapter 05 | Container Networking & Port Mapping | ✅ Completed |
-
-### Kubernetes
-
-| Topic | Status |
-|------|------|
-| Fundamentals | ⏳ Planned |
-| Pods & Deployments | ⏳ Planned |
-| Services & Ingress | ⏳ Planned |
-
----
-
-## Chapter 05 – Container Networking (What You Learned)
-
-This chapter focuses on **how containers communicate with the host machine**.
-
-### Key Concepts Covered
-- Containers have their **own isolated network namespace**
-- Exposing a port in Dockerfile **does NOT publish it**
-- `-p hostPort:containerPort` is mandatory for access
-- Difference between:
-  - Application running
-  - Application being reachable
-- Why “container is running” ≠ “service is accessible”
-
-### Structure Philosophy
-- **bad/** → container runs but is unreachable
-- **good/** → proper port mapping and accessible service
-- Both scenarios coexist for comparison and testing
-
-This structure will be followed for **all future chapters**, regardless of how many scenarios exist.
-
----
-
-## How to Start
+From the repo root:
 
 ```bash
-git clone https://github.com/sandeepdass007/docker-kubernetes-learning.git
-cd docker-kubernetes-learning
-./bootstrap.sh
+cd docker
+```
+
+Then pick a chapter and follow its README.
+
+---
+
+## Chapters (current)
+
+1. Chapter 01 — Hello World
+2. Chapter 02 — Image Layers & Cache
+3. Chapter 03 — Dockerfile Best Practices
+4. Chapter 04 — Breaking Data (Volumes)
+5. Chapter 05 — Container Networking Basics
+6. Chapter 06 — Docker Networks (bridge, host, none, user-defined)
+7. Chapter 07 — Network Drivers (bridge/host/none deep dive)
+8. Chapter 08 — Container-to-Container Communication
+9. Chapter 09 — Docker Compose
+10. Chapter 10 — Image Layering (efficient builds)
+11. Chapter 11 — Multi-stage Builds
+12. Chapter 12 — Volumes (bind/named/tmpfs)
+13. Chapter 13 — Environment Variables & Secrets
+
+---
+
+## How chapters are structured
+
+Most chapters include:
+
+- A `README.md` describing the goal and how to run it
+- `run.sh` / `clean.sh` scripts for easy experimentation
+- `bad/` and `good/` subfolders when a “broken vs fixed” comparison is valuable
+
+---
+
+## Quick start
+
+From the `docker` folder, run a chapter:
+
+```bash
+cd docker/chapter-01-hello-world
+./run.sh
 ```
 
 ---
 
-## Status
+## Keep learning
 
-This repository is **actively evolving**.
-
-Only **completed, runnable, and documented chapters** are included.
-Future topics appear only after they are fully implemented.
-
-Break things. Re-run chapters. Read the code.
-
-That’s how infrastructure becomes intuitive.
+- Run chapters repeatedly
+- Read the Dockerfiles and scripts
+- Break things intentionally
+- Real understanding comes from doing
