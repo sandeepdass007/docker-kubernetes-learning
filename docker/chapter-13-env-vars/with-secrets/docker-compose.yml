@@ -1,0 +1,11 @@
+services:
+  secret-app:
+    build: .
+    ports:
+      - "5001:5001"
+    secrets:
+      - db_password
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
