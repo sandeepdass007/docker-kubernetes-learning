@@ -17,3 +17,7 @@ for i in {1..5}; do
     sleep 15
     docker ps
 done
+
+echo "Requesting container logs...\n"
+
+docker logs -f restart-demo
