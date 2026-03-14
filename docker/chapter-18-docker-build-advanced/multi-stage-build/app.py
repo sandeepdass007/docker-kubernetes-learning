@@ -1,0 +1,1 @@
+print("Application running from a multi-stage build!")
