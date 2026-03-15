@@ -1,0 +1,1 @@
+print("Application running from production stage.")
