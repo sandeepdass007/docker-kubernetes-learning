@@ -1,0 +1,1 @@
+print("Docker Image Optimization Demo")
